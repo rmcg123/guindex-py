@@ -1,0 +1,26 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guindex"
+version = "0.0.1"
+description = "A package to retrieve data from the Guindex project."
+readme = "README.md"
+authors = [{name = "The Guindex Team", email="theguindexteam@gmail.com"}]
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests",
+    "pandas",
+]
+
+[project.urls]
+repository = "https://github.com/rmcg123/guindex-py"
