@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 from pandas.testing import assert_series_equal, assert_frame_equal
 
-from src.guindex import pubs, pints
+from guindex import pubs, pints
 
 
 class TestPubs(unittest.TestCase):
@@ -55,7 +55,7 @@ class TestPubs(unittest.TestCase):
         with self.assertRaises(ValueError):
             pubs(serving_guinness="don't know")
 
-    @patch("src.guindex.pubs_request")
+    @patch("guindex.guindex_functions.pubs_request")
     def test_pubs(self, mock_pubs_request):
         """Check that data formatting is working."""
 
@@ -197,8 +197,8 @@ class TestPints(unittest.TestCase):
             }
         )
 
-    @patch("src.guindex.pints_request")
-    @patch("src.guindex.pubs")
+    @patch("guindex.guindex_functions.pints_request")
+    @patch("guindex.guindex_functions.pubs")
     def test_pints(self, mock_pubs, mock_pints_request):
 
         mock_pubs.return_value = self.pubs_response

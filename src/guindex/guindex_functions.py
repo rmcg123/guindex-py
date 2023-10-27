@@ -124,7 +124,7 @@ def pubs(county=None, serving_guinness=None, closed=None, with_prices=False):
     # Make sure datetime columns return the correct data type.
     for datetime_col in ["creation_date", "last_submission_time"]:
         pub_df[datetime_col] = pd.to_datetime(
-            pub_df[datetime_col], format="%Y-%m-%dT%H:%M:%S%z"
+            pub_df[datetime_col], format="ISO8601"
         )
 
     # Make sure pub creator IDs are integers.
@@ -228,7 +228,7 @@ def pints(county=None):
 
     # Correctly format datetime columns.
     pints_df["creation_date"] = pd.to_datetime(
-        pints_df["creation_date"], format="%Y-%m-%dT%H:%M:%S%z"
+        pints_df["creation_date"], format="ISO8601"
     )
 
     # Correctly format float columns.
